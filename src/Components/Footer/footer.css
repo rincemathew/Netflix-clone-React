@@ -1,0 +1,15 @@
+.flex-box {
+    display: flex;
+    justify-content: center;
+}
+
+.global-class-name {
+    padding-right: 15px;
+}
+
+.padd {
+    padding-top: 5px;
+    font-size: .8em;
+    font-weight: bold;
+    color:#5a5c5b;
+}
