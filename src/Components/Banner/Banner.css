@@ -1,33 +1,51 @@
 .banner {
     background-size: cover;
-    height: 448px;
+    height: 90vh;
     color: white;
 }
 
 .content {
-    padding-top: 140px;
-    height: 190px;
-    padding-left: 15px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
 }
 
-.title {
+/* .title {
     font-size: 3rem;
     font-weight: 800;
     padding-bottom: 0.3rem;
-}
+} */
 
 .button {
-    color: white;
+    color: black;
     outline: none;
     border: none;
-    font-weight: 700;
+    font-weight: bold;
+    font-size: 1.2rem;
     border-radius: 5px;
     padding-left: 2rem;
     padding-right: 2rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     margin-right: 1rem;
-    background-color: rgba(51, 51, 51, 0.5);
+    background-color: white;
+    cursor: pointer;
+}
+
+.button2 {
+    color: white;
+    outline: none;
+    border: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-right: 1rem;
+    background-color:#5a5c5b;
     cursor: pointer;
 }
 
@@ -46,6 +64,6 @@
 }
 
 .fade {
-    height: 7.4rem;
+    height: 90vh;
     background-image: linear-gradient(180deg, transparent, rgba(37,37,37,.61),#111);
 }

@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import {API_KEY, imageUrl} from '../../constants/constants'
 import './Banner.css'
 import axios from '../../axios'
+import { FaPlay } from "react-icons/fa";
+import { GrCircleInformation } from "react-icons/gr";
+
 
 function Banner() {
   const [movie, setMovie] = useState()
@@ -19,12 +22,19 @@ function Banner() {
   return (
     <div style={{backgroundImage:`url(${movie ? imageUrl+movie.backdrop_path: ""})`}} className='banner'>
         <div className="content">
-            <h1 className="title">{movie ? movie.title : ""}</h1>
-            <div className="banner-buttons">
-                <button className="button">Play</button>
-                <button className="button">My List</button>
+          <div>
+          <h1 style={{paddingBottom:'30px'}} className="title">{movie ? movie.title : ""}</h1>
+            <div style={{display:'flex', justifyContent:'center'}} className="banner-buttons">
+                <button style={{display:'flex', alignItems:'center'}} className="button">
+                <FaPlay/>
+                <span style={{paddingLeft:'5px'}}>Play</span></button>
+                <button style={{display:'flex', alignItems:'center'}} className="button2">
+                <GrCircleInformation/>
+                <span style={{paddingLeft:'5px'}}>More Info</span>
+                </button>
             </div>
-            <h1 className="description">{movie ? movie.overview: ""}</h1>
+            {/* <h1 className="description">{movie ? movie.overview: ""}</h1> */}
+          </div>
         </div>
         <div className="fade">
             
