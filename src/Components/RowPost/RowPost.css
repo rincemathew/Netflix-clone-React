@@ -1,3 +1,9 @@
+.row1 {
+    margin-left: 20px;
+    color: white;
+    margin-top: -15vh;
+}
+
 .row {
     margin-left: 20px;
     color: white;
@@ -5,9 +11,10 @@
 
 .posters {
     display: flex;
-    padding: 20px;
+    padding-top: 20px;
     overflow-x: scroll;
     overflow-y: hidden;
+    /* align-items: center; */
 }
 
 .posters::-webkit-scrollbar {
@@ -15,6 +22,21 @@
 }
 
 .poster {
-    max-height: 250px;
+    max-height: 150px;
     margin-right: 10px;
+}
+
+.head {
+    padding-top: 20px;
+}
+
+.button-img {
+    color: white;
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+.button-img:hover {
+    cursor: pointer;
 }
