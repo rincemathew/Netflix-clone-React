@@ -13,7 +13,7 @@ root.render(
   <BrowserRouter>
   <Routes>
     <Route path='/' element={<App />}/>
-    <Route path='pages' element={<RetailedPage />}/>
+    <Route path='details/:id' element={<RetailedPage />}/>
     <Route path="*"
       element={
         <main style={{ padding: "1rem" }}>

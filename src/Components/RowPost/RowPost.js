@@ -4,6 +4,7 @@ import { imageUrl } from '../../constants/constants'
 import axios from '../../axios'
 import './RowPost.css'
 import { MdArrowBackIos,MdArrowForwardIos } from "react-icons/md";
+import { Link} from 'react-router-dom';
 
 function RowPost(props) {
   const posters = document.getElementById(props.url);
@@ -24,7 +25,12 @@ function RowPost(props) {
         <div id={props.url} className='posters'>
         
         {nOriginals.map((obj =>
+        // <Routes>
+        // <Link to={{pathname:'/details/objid', state:{stateParam:true}}}>
+        <Link to={`/details/${obj.id}`} state={{stateParam:true}}>
           <img className='poster' src={`${imageUrl+obj.backdrop_path}`} alt="poster" />
+          </Link>
+          // </Routes>
         ))}
         
         </div>
