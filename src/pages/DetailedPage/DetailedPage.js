@@ -5,8 +5,9 @@ import axios from '../../axios'
 import { FaPlay } from "react-icons/fa";
 import {API_KEY, imageUrl} from '../../constants/constants'
 import { Link,useParams, useLocation} from 'react-router-dom';
+import './DetailedPage.css'
 
-function RetailedPage() {
+function DetailedPage() {
   const [movies, setMovies] = useState()
   // const type = useParams().type; same down
   const {id} = useParams();
@@ -19,6 +20,12 @@ function RetailedPage() {
       setMovies(response.data)
     })
   }, [])
+
+  function callMovie(hello) {
+    return hello.map((respnse)=>{
+      return `${respnse.name} `
+    })
+  }
   
   return (
     <div>
@@ -38,10 +45,34 @@ function RetailedPage() {
         
         </div>
       </div>
-      <div>{movies? movies.original_title: ''}</div>
+      <div className='fade1'></div>
+      <div style={{display:'flex', justifyContent:'center'}}>
+        <div style={{width:'90%', padding:'20px'}}>
+          <div style={{display:'flex'}}>
+            <div style={{paddingRight:'20px', color:'#20fc03'}}>
+            {movies? movies.vote_average+'%': ''}
+            </div>
+            <div style={{paddingRight:'20px'}}>
+            {movies? movies.release_date: ''}
+            </div>
+            <div style={{color:'#fa00a2'}}>
+            {movies? ''+movies.adult==='false' ? 'U/A':'A': ''}
+            </div>
+          </div>
+          <div style={{paddingTop:'20px', fontSize:'large', fontStyle:'italic'}}>
+          {movies? movies.tagline: ''}
+          </div>
+          <div style={{paddingTop:'20px', fontWeight:'bold'}}>
+          {movies? movies.overview: ''}
+          </div>  
+          <div style={{paddingTop:'10px', paddingBottom:'20px'}}>
+            {movies ? 'Genres: '+callMovie(movies.genres):''}
+          </div>  
+        </div>
+      </div>
       <Footer/>
     </div>
   )
 }
 
-export default RetailedPage
+export default DetailedPage

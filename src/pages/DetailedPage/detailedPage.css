@@ -1,0 +1,4 @@
+.fade1 {
+    height: 2vh;
+    background-image: linear-gradient(180deg, transparent, rgba(37,37,37,.61),#111);
+}

@@ -4,6 +4,7 @@ import './Banner.css'
 import axios from '../../axios'
 import { FaPlay } from "react-icons/fa";
 import { GrCircleInformation } from "react-icons/gr";
+import { Link} from 'react-router-dom';
 
 
 function Banner() {
@@ -25,9 +26,11 @@ function Banner() {
           <div>
           <h1 style={{paddingBottom:'30px'}} className="title">{movie ? movie.title : ""}</h1>
             <div style={{display:'flex', justifyContent:'center'}} className="banner-buttons">
+            <Link to={`/details/${movie ? movie.id : ""}`} state={{stateParam:true}}>
                 <button style={{display:'flex', alignItems:'center'}} className="button">
                 <FaPlay/>
                 <span style={{paddingLeft:'5px'}}>Play</span></button>
+                </Link>
                 <button style={{display:'flex', alignItems:'center'}} className="button2">
                 <GrCircleInformation/>
                 <span style={{paddingLeft:'5px'}}>More Info</span>

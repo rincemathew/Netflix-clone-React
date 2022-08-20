@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import RetailedPage from './pages/DetailedPage/RetailedPage';
+import DetailedPage from './pages/DetailedPage/DetailedPage';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -13,7 +13,7 @@ root.render(
   <BrowserRouter>
   <Routes>
     <Route path='/' element={<App />}/>
-    <Route path='details/:id' element={<RetailedPage />}/>
+    <Route path='details/:id' element={<DetailedPage />}/>
     <Route path="*"
       element={
         <main style={{ padding: "1rem" }}>
