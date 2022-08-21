@@ -1,10 +1,11 @@
 import React,{useEffect,useState} from 'react'
 import Footer from '../../Components/Footer/Footer'
 import NavBar from '../../Components/NavBar/NavBar'
+import MoreLike from '../../Components/More/MoreLike'
 import axios from '../../axios'
 import { FaPlay } from "react-icons/fa";
 import {API_KEY, imageUrl} from '../../constants/constants'
-import { Link,useParams, useLocation} from 'react-router-dom';
+import { useParams, useLocation} from 'react-router-dom';
 import './DetailedPage.css'
 
 function DetailedPage() {
@@ -13,23 +14,32 @@ function DetailedPage() {
   const {id} = useParams();
   const stateParam = useLocation().state;
   console.log(id)
-  console.log(stateParam)
+  // console.log(stateParam)
+  console.log(movies)
+  let resName
   useEffect(() => {
     axios.get(`/movie/${id}?api_key=${API_KEY}&language=en-US`).then((response)=>{
-      console.log(response)
+      // console.log(response)
       setMovies(response.data)
     })
   }, [])
 
   function callMovie(hello) {
-    return hello.map((respnse)=>{
+    return hello.map((respnse, index)=>{
+      // console.log(respnse.name, index)
+      if (index == 0){
+        resName = respnse.name
+        // console.log(respnse.name, index)
+      }
       return `${respnse.name} `
+      
     })
   }
   
   return (
     <div>
       <NavBar/>
+      <div>
       <div>
         <div style={{backgroundImage:`url(${movies ? imageUrl+movies.backdrop_path: ""})`}} className='banner'>
           <div className='one' style={{ position:'relative',height:'100%'}}>
@@ -70,6 +80,8 @@ function DetailedPage() {
           </div>  
         </div>
       </div>
+      </div>
+      <MoreLike id={movies ? movies.genres[0].id:''}/>
       <Footer/>
     </div>
   )

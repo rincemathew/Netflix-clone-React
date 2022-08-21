@@ -1,7 +1,7 @@
-/* .full {
-    width: 100%;
-    position: fixed;
-} */
+.full {
+    /* width: 100%; */
+    /* position: initial; */
+}
 
 .global-class-name {
     width: auto;
@@ -17,6 +17,7 @@
 }
 
 .padd-left {
+    color:white;
     padding-left: 10px;
     font-weight: bold;
     font-size: 1em;

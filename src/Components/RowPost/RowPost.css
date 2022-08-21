@@ -26,6 +26,10 @@
     margin-right: 10px;
 }
 
+.poster:hover {
+    transform: scale(1.2);
+}
+
 .head {
     padding-top: 20px;
 }

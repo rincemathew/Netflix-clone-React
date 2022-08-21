@@ -4,8 +4,15 @@ import { ImSearch } from 'react-icons/im';
 import { IoNotifications } from 'react-icons/io5';
 import './NavBar.css';
 import { IconContext } from "react-icons";
+import { Link, useNavigate} from 'react-router-dom';
 
 function NavBar() {
+  const navigate = useNavigate()
+
+  const butNavigate = ()=>{
+    navigate('/')
+  } 
+
   return (
     <div
       className="full"
@@ -29,12 +36,13 @@ function NavBar() {
           className="main"
           style={{ width: "50%", display: "flex", alignItems: "center" }}
         >
+          <Link to={'.'}>
           <img
             className="logo"
             src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
             alt="Netflix Logo"
-          />
-          <div className="padd-left">Home</div>
+          /></Link>
+          <div onClick={butNavigate} className="padd-left">Home</div>
           <div className="padd-left">TV Shows</div>
           <div className="padd-left">Movies</div>
           <div className="padd-left">New & Popular</div>
