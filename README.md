@@ -15,3 +15,5 @@ React JS
 Tailwind CSS
 Firebase
 Movie Database API
+
+<!-- https://www.youtube.com/watch?v=ATz8wg6sg30 -->
